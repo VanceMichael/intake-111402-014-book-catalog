@@ -1,0 +1,95 @@
+{
+  "exchanges": [
+    {
+      "path": "/messages",
+      "method": "GET",
+      "body": {
+        "items": [
+          "m1"
+        ]
+      },
+      "requires": {},
+      "sets": {},
+      "status": 200,
+      "query": {}
+    },
+    {
+      "path": "/messages/m1",
+      "method": "GET",
+      "body": {
+        "sender": "press1",
+        "recordReference": "book1",
+        "notificationType": "03",
+        "identifiers": [
+          {
+            "type": "15",
+            "value": "9780000000001"
+          }
+        ],
+        "blocks": {
+          "descriptive": {
+            "title": "工厂里的科学",
+            "contributors": [
+              "作者甲"
+            ]
+          },
+          "supply": [
+            {
+              "supplierId": "s1",
+              "availability": "available"
+            }
+          ]
+        },
+        "deletedBlocks": []
+      },
+      "requires": {},
+      "sets": {},
+      "status": 200,
+      "query": {}
+    }
+  ],
+  "cases": {
+    "partial": [
+      {
+        "path": "/messages",
+        "method": "GET",
+        "body": {
+          "items": [
+            "m1",
+            "m2",
+            "m2"
+          ]
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m2",
+        "method": "GET",
+        "body": {
+          "sender": "press1",
+          "recordReference": "book1",
+          "notificationType": "04",
+          "identifiers": [
+            {
+              "type": "15",
+              "value": "9780000000001"
+            }
+          ],
+          "blocks": {
+            "collateral": {
+              "cover": "/cover/new"
+            }
+          },
+          "deletedBlocks": []
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      }
+    ]
+  }
+}
