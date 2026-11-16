@@ -14,7 +14,7 @@ test('相同收件幂等，不同内容保留版本',async () => {
     await archive.put([{id:'one',value:2}],{source:'local'});
     assert.equal((await new Archive(directory).list()).length,2);
     await assert.rejects(archive.put([{value:3}],{}),/record id/);
-    const api = await createApi(archive);
+    const api = await createApi(archive,null);
     try {const response = await fetch(`${api.origin}/records`);assert.equal((await response.json()).length,2);}
     finally {await api.close();}
   } finally {await rm(directory,{recursive:true,force:true});}

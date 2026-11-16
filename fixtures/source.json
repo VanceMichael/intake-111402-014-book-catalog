@@ -90,6 +90,190 @@
         "status": 200,
         "query": {}
       }
+    ],
+    "lifecycle": [
+      {
+        "path": "/messages",
+        "method": "GET",
+        "body": {
+          "items": [
+            "m1",
+            "m2",
+            "m3",
+            "m4",
+            "m5",
+            "m6",
+            "m7",
+            "m2",
+            "m8"
+          ]
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m2",
+        "method": "GET",
+        "body": {
+          "sender": "press1",
+          "recordReference": "book1",
+          "notificationType": "04",
+          "identifiers": [
+            {
+              "type": "15",
+              "value": "9780000000001"
+            },
+            {
+              "type": "03",
+              "value": "PRESS1-BOOK1"
+            }
+          ],
+          "blocks": {
+            "collateral": {
+              "cover": "/cover/new"
+            },
+            "supply": [
+              {
+                "supplierId": "s2",
+                "availability": "backorder"
+              }
+            ]
+          },
+          "deletedBlocks": []
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m3",
+        "method": "GET",
+        "body": {
+          "sender": "press1",
+          "recordReference": "book1",
+          "notificationType": "04",
+          "identifiers": [],
+          "blocks": {
+            "collateral": {}
+          },
+          "deletedBlocks": [
+            "supply/s2"
+          ]
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m4",
+        "method": "GET",
+        "body": {
+          "sender": "press1",
+          "recordReference": "book1",
+          "notificationType": "02",
+          "identifiers": [],
+          "blocks": {},
+          "deletedBlocks": []
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m5",
+        "method": "GET",
+        "body": {
+          "sender": "press1",
+          "recordReference": "book1",
+          "notificationType": "05",
+          "identifiers": [],
+          "blocks": {},
+          "deletedBlocks": []
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m6",
+        "method": "GET",
+        "body": {
+          "sender": "press1",
+          "recordReference": "book1-set",
+          "notificationType": "03",
+          "identifiers": [
+            {
+              "type": "15",
+              "value": "9780000000001"
+            }
+          ],
+          "blocks": {
+            "descriptive": {
+              "title": "工厂里的科学（套装）"
+            },
+            "supply": [
+              {
+                "supplierId": "s1",
+                "availability": "available"
+              }
+            ]
+          },
+          "deletedBlocks": []
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m7",
+        "method": "GET",
+        "body": {
+          "sender": "press2",
+          "recordReference": "book1",
+          "notificationType": "02",
+          "identifiers": [
+            {
+              "type": "15",
+              "value": "9780000000001"
+            }
+          ],
+          "blocks": {
+            "descriptive": {
+              "title": "另一家出版社的提前信息"
+            }
+          },
+          "deletedBlocks": []
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      },
+      {
+        "path": "/messages/m8",
+        "method": "GET",
+        "body": {
+          "sender": "press1",
+          "recordReference": "book1",
+          "notificationType": "04",
+          "identifiers": [],
+          "blocks": {
+            "supply": []
+          },
+          "deletedBlocks": []
+        },
+        "requires": {},
+        "sets": {},
+        "status": 200,
+        "query": {}
+      }
     ]
   }
 }
